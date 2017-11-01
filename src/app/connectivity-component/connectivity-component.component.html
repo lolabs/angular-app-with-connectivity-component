@@ -1,0 +1,19 @@
+<div *ngIf="connectionError; else elseBlock">
+  <ul>
+    <li>
+      <div class="red" >No Connection</div>
+    </li>
+  </ul>
+<div  id="noConnectionAlert" class="centered text-center" *ngIf="connectionError">
+  <p>There is no connection. Please check your connection.</p>
+  <a class="btn btn-info" (click)="checkBrowserConnection()">Try again</a>
+</div>
+<div class="modal-background"></div>
+</div>
+<ng-template #elseBlock>
+  <ul>
+    <li>
+      <div class="green" >Connected</div>
+    </li>
+  </ul>
+</ng-template>
